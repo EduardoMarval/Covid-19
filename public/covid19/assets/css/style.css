@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;600&display=swap");
+
+:root {
+  --black: #000000;
+  --black-light: #3b3b3b;
+  --grey: #363342;
+  --grey-2: #2e303f;
+  --purple: #6b5ecd;
+  --cyan: #099ff4;
+  --red: #ea5f5e;
+  --green: #22b080;
+  --white: #e3e3e3;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  background-image: url("../img/covid-19-coronavirus-3d-virus-render-background.jpg");
+  height: 100%;
+  width: 100vw;
+  overflow-x: hidden;
+}
+.c_white {
+  color: var(--white);
+}
+.datos_tabla_total {
+  height: 400px;
+  overflow-x: hidden;
+}
+
+.navbar, footer{
+background-color:#000A14;
+color:white;
+}
+
+.chartContainer {
+  width: 80%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  margin: 0 auto;
+  background-color: #000000;
+}
+
+.datos_tabla_total {
+  background:  0px 3px 16px -2px rgba(0, 0, 0, 0.75);
+  padding: 30px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 3px 16px -2px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 3px 16px -2px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 3px 16px -2px rgba(0, 0, 0, 0.75);
+}
+thead tr th {
+  color: var(--white);
+  text-transform: uppercase;
+}
+tbody tr th {
+  color: var(--white);
+}
+tbody tr td {
+  color: var(--white);
+}
+
+
+.chartContainer {
+  background-color: var(--white);
+  border-radius: 10px;
+  padding: 0;
+  -webkit-box-shadow: 0px 3px 16px -2px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 3px 16px -2px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 3px 16px -2px rgba(0, 0, 0, 0.75);
+}
+#bar-chart-grouped {
+  width: 100% !important;
+}
+.pais {
+  font-weight: 600;
+  color: #00FFFF;
+}
+
+#doughnut-chart {
+  background-color: white;
+  box-shadow: none;
+}
+
+.no-shadow {
+  -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+  border: none;
+}
+
+.error-form {
+  color: red;
+}
+
+
+.menu-active {
+  color: var(--purple) !important;
+  font-weight: 600;
+}
+
+
+/* Works on Chrome, Edge, and Safari */
+.datos_tabla_total::-webkit-scrollbar {
+  width: 12px;
+}
+
+.datos_tabla_total::-webkit-scrollbar-track {
+  background: #e3e3e3;
+}
+
+.datos_tabla_total::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 40, 81, 1);;
+  border-radius: 20px;
+  border: 3px solid #e3e3e3;
+}
+
+.modal-content ,.modal-title{
+background-color:rgba(0, 40, 81, 0.80);
+color:white;
+}
+
+.chartContainer {
+  background-color:#002851;
+  }
+
+.btn{
+    background-color: #00FFFF !important;
+    color:#002851 !important;
+    }
