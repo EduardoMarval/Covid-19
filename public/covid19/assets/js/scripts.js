@@ -4,6 +4,7 @@ const modalCuerpo = document.getElementById("modalCuerpo");
 const pais = document.getElementById("pais");
 const itemSesion = document.getElementById("item-sesion");
 const situacionChile = document.getElementById("situacionChile");
+const errorLogin = document.getElementById("errorLogin");
 const splitarray = [];
 const spacesArray = [
   {
@@ -278,37 +279,20 @@ const postData = async (email, password) => {
         method: 'POST',
         body: JSON.stringify({ email: email, password: password })
       })
+
     const { token } = await response.json()
-    return token
-  } catch (err) {
-    console.error(`Error: ${err} `)
-  }
-}
+    
+    if (token === undefined) {
+      errorLogin.innerHTML = `<p class="error-form text-center animate__animated animate__shakeX">Datos incorrectos</p>`;
+      //loading.classList.add("remove");
+    } else {
+      localStorage.setItem("MasterKey", token);
 
-//Funcion para visualizar la info del get
-const fillTable = (data, table) => {
-  let rows = "";
-  $.each(data, (i, row) => {
-    rows += `<tr>
-              <td> ${row.title} </td>
-              <td> ${row.body} </td>
-            </tr>`
-  })
-  $(`#${table} tbody`).append(rows);
-}
+      errorLogin.innerHTML = "";
+      location.reload();
+    }
 
-//funcion para mostrar la info del post
-const getPosts = async (jwt) => {
-  try {
-    const response = await fetch('http://localhost:3000/api/posts',
-      {
-        method: 'GET',
-        headers: {
-          Authorization: `Bearer ${jwt} `
-        }
-      })
-    const { data } = await response.json()
-    return data
+    return token;
   } catch (err) {
     console.error(`Error: ${err} `)
   }
@@ -318,17 +302,24 @@ const getPosts = async (jwt) => {
 (() => {
   const cerrarSesion = document.getElementById("cerrarSesion");
 
-  if (localStorage.getItem("token") != undefined) {
+  if (localStorage.getItem("MasterKey") != undefined) {
     itemSesion.innerHTML = `
     <a id="cerrarSesion" class="nav-link" href="#" >Cerrar Sesión</a>`;
     situacionChile.innerHTML =
       '<a class="nav-link situacion" href="/covid19/situacion-chile.html">Situación en Chile</a>';
   } else {
     itemSesion.innerHTML = `
-    <a id="nav-item-login" class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Iniciar Sesión</a>`;
+    <a id="nav-item-login" class="nav-link" href="#"  data-toggle="modal" data-target="#exampleModal">Iniciar Sesión</a>`;
     situacionChile.innerHTML = "";
   }
 })();
+
+
+cerrarSesion.addEventListener("click", async (e) => {
+  localStorage.removeItem("MasterKey");
+  window.location.href = "/covid19/";
+});
+
 
 //conexion con la API
 const getTotalData = async () => {

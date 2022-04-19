@@ -52,17 +52,14 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mt-2 mt-md-0">
-          <li class="nav-item">
-            <a class="nav-link home " aria-current="page" href="/covid19/">Home</a>
-        </li>
-        <li id="situacionChile" class="nav-item">
-
-        </li>
-        <li id="item-sesion" class="nav-item">
-
-        </li>
+        <ul class="navbar-nav mr-auto">
         </ul>
+        <form class="form-inline mt-2 mt-md-0">
+
+          <button id="logout" style="display: none;" type="button" class="btn btn-outline-success my-2 my-sm-0">
+            Logout
+          </button>
+        </form>
       </div>
     </nav>
   </header>
@@ -71,18 +68,18 @@
 
   <!-- Modal para iniciar sesion -->
   <div class="container mt-5">
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalSesion">
       Launch demo modal
     </button>
   </div>
 
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  <div class="modal fade" id="modalSesion" tabindex="-1" role="dialog" aria-labelledby="modalSesionLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <!-- Header del Modal-->
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <h5 class="modal-title" id="modalSesionLabel">Modal title</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
