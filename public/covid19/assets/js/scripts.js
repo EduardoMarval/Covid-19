@@ -1,8 +1,9 @@
 //Declaramos las constantes y variables globales
-
 const datos_tabla = document.getElementById("datos_tabla");
 const modalCuerpo = document.getElementById("modalCuerpo");
 const pais = document.getElementById("pais");
+const itemSesion = document.getElementById("item-sesion");
+const situacionChile = document.getElementById("situacionChile");
 const splitarray = [];
 const spacesArray = [
   {
@@ -312,6 +313,22 @@ const getPosts = async (jwt) => {
     console.error(`Error: ${err} `)
   }
 }
+
+
+(() => {
+  const cerrarSesion = document.getElementById("cerrarSesion");
+
+  if (localStorage.getItem("token") != undefined) {
+    itemSesion.innerHTML = `
+    <a id="cerrarSesion" class="nav-link" href="#" >Cerrar Sesión</a>`;
+    situacionChile.innerHTML =
+      '<a class="nav-link situacion" href="/covid19/situacion-chile.html">Situación en Chile</a>';
+  } else {
+    itemSesion.innerHTML = `
+    <a id="nav-item-login" class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Iniciar Sesión</a>`;
+    situacionChile.innerHTML = "";
+  }
+})();
 
 //conexion con la API
 const getTotalData = async () => {
