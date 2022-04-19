@@ -309,16 +309,11 @@ const postData = async (email, password) => {
       '<a class="nav-link situacion" href="/covid19/situacion-chile.html">Situación en Chile</a>';
   } else {
     itemSesion.innerHTML = `
-    <a id="nav-item-login" class="nav-link" href="#"  data-toggle="modal" data-target="#exampleModal">Iniciar Sesión</a>`;
+    <a id="nav-item-login" class="nav-link" href="#"  data-toggle="modal" data-target="#loginModal">Iniciar Sesión</a>`;
     situacionChile.innerHTML = "";
   }
 })();
 
-
-cerrarSesion.addEventListener("click", async (e) => {
-  localStorage.removeItem("MasterKey");
-  window.location.href = "/covid19/";
-});
 
 
 //conexion con la API
@@ -597,3 +592,15 @@ const getSingleData = async (locationParameter) => {
     console.log(err);
   }
 };
+
+cerrarSesion.addEventListener("click", async (e) => {
+  localStorage.removeItem("MasterKey");
+  window.location.href = "/covid19/";
+});
+
+
+loginButton.addEventListener("click", async (e) => {
+  e.preventDefault();
+  loginValidation(userEmail.value, userPassword.value);
+});
+
