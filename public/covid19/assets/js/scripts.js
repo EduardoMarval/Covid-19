@@ -1,10 +1,12 @@
 //Declaramos las constantes y variables globales
+const datos_tabla = document.getElementById("datos_tabla");
 const pais = document.getElementById("pais");
 const splitarray = [];
 let increaser = '0';
 let next = document.getElementById("next-page");
 let previous = document.getElementById("previous-page");
 let myChart;
+
 const spacesArray = [
   {
     location: "GB",

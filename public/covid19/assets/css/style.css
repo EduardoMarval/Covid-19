@@ -127,3 +127,24 @@ color:white;
     background-color: #00FFFF !important;
     color:#002851 !important;
     }
+
+    .loader {
+      position: fixed;
+      left: 0px;
+      top: 0px;
+      width: 100%;
+      height: 100%;
+      z-index: 9999;
+      background-color: #01102b;
+  }
+  .loader lottie-player{
+      position: relative;
+      left: 40%;
+      top: 40%;
+  }
+
+  .hidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 0.5s, opacity 0.5s linear;
+  }
