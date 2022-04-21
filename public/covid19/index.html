@@ -52,39 +52,35 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-auto">
-        </ul>
-        <form class="form-inline mt-2 mt-md-0">
+        <ul class="navbar-nav mt-2 mt-md-0">
+          <li class="nav-item">
+            <a class="nav-link home " aria-current="page" href="/covid19/">Home</a>
+          </li>
+          <li id="situacionChile" class="nav-item">
 
-          <button id="logout" style="display: none;" type="button" class="btn btn-outline-success my-2 my-sm-0">
-            Logout
-          </button>
-        </form>
+          </li>
+          <li id="item-sesion" class="nav-item">
+
+          </li>
+        </ul>
       </div>
     </nav>
   </header>
 
   <!-- Begin page content -->
 
-  <!-- Modal para iniciar sesion -->
-  <div class="container mt-5">
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalSesion">
-      Launch demo modal
-    </button>
-  </div>
-
-  <div class="modal fade" id="modalSesion" tabindex="-1" role="dialog" aria-labelledby="modalSesionLabel"
+  <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <!-- Header del Modal-->
+        <!--Header del Modal-->
         <div class="modal-header">
-          <h5 class="modal-title" id="modalSesionLabel">Modal title</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Inicie sesion</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <!-- Body del Modal-->
+        <!--Body del Modal-->
         <div class="modal-body">
           <div class="row justify-content-center align-items-center">
             <div class="col-md-12">
@@ -100,37 +96,17 @@
                   <input type="password" class="form-control" id="js-input-password">
                 </div>
                 <div class="py-3">
-                  <button type="submit" class="btn btn-primary">Ingresar</button>
+                  <div id="errorLogin" class="form-text"></div>
+                  <button id="loginButon" type="submit" class="btn btn-primary mt-5">Ingresar</button>
                 </div>
               </form>
             </div>
           </div>
         </div>
-        <!-- Footer del Modal-->
-        <div class="modal-footer">
-        </div>
+        <!-- Footer del Moda-->
       </div>
     </div>
   </div>
-
-  <!-- Tabla Chile-->
-  <div class="container">
-    <div id="js-table-wrapper" class="col-md-12">
-      <table id="js-table-posts" class="table">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
-          </tr>
-        </thead>
-        <tbody>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
 
   <!-- Tabla-->
   <div class="container-fluid pt-5">
@@ -217,6 +193,7 @@
     integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
     crossorigin="anonymous"></script>
   <script src="./assets/js/scripts.js"></script>
+  <script src="./assets/js/login_validation.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"
     integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>

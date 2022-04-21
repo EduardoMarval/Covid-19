@@ -1,9 +1,12 @@
 //Declaramos las constantes y variables globales
-
 const datos_tabla = document.getElementById("datos_tabla");
-const modalCuerpo = document.getElementById("modalCuerpo");
 const pais = document.getElementById("pais");
 const splitarray = [];
+let increaser = '0';
+let next = document.getElementById("next-page");
+let previous = document.getElementById("previous-page");
+let myChart;
+
 const spacesArray = [
   {
     location: "GB",
@@ -253,65 +256,6 @@ const spacesArray = [
     active: 0,
   },
 ];
-
-let increaser = '0';
-let next = document.getElementById("next-page");
-let previous = document.getElementById("previous-page");
-let myChart;
-
-//llamada a la funcion del login
-$('#js-form').submit(async (event) => {
-  event.preventDefault()
-  const email = document.getElementById('js-input-email').value
-  const password = document.getElementById('js-input-password').value
-  const JWT = await postData(email, password)
-  const posts = await getPosts(JWT)
-  fillTable(posts, 'js-table-posts')
-})
-
-//funcion para traer el token del login
-const postData = async (email, password) => {
-  try {
-    const response = await fetch('http://localhost:3000/api/login',
-      {
-        method: 'POST',
-        body: JSON.stringify({ email: email, password: password })
-      })
-    const { token } = await response.json()
-    return token
-  } catch (err) {
-    console.error(`Error: ${err} `)
-  }
-}
-
-//Funcion para visualizar la info del get
-const fillTable = (data, table) => {
-  let rows = "";
-  $.each(data, (i, row) => {
-    rows += `<tr>
-              <td> ${row.title} </td>
-              <td> ${row.body} </td>
-            </tr>`
-  })
-  $(`#${table} tbody`).append(rows);
-}
-
-//funcion para mostrar la info del post
-const getPosts = async (jwt) => {
-  try {
-    const response = await fetch('http://localhost:3000/api/posts',
-      {
-        method: 'GET',
-        headers: {
-          Authorization: `Bearer ${jwt} `
-        }
-      })
-    const { data } = await response.json()
-    return data
-  } catch (err) {
-    console.error(`Error: ${err} `)
-  }
-}
 
 //conexion con la API
 const getTotalData = async () => {
