@@ -146,5 +146,5 @@ color:white;
   .hidden {
     visibility: hidden;
     opacity: 0;
-    transition: visibility 0s 0.4s, opacity 0.4s linear;
+    transition: visibility 0s 0.5s, opacity 0.5s linear;
   }
